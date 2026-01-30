@@ -1,0 +1,728 @@
+--Load
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/hakaiofc/Base/main/HUBORION')))()
+
+--Main Script
+local Window = OrionLib:MakeWindow({Name = "Hakai HubPriv", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest", IntroEnabled = false})
+
+--Valor
+_G.AutoStrength = false  
+function AutoStrength()
+    while _G.AutoStrength do
+        local ReplicatedStorage = game:GetService("ReplicatedStorage")
+        local damageRemote = ReplicatedStorage:WaitForChild("DamageRemote")
+        local punchingBagHumanoid = workspace:WaitForChild("PunchingBag"):WaitForChild("PunchingBag"):WaitForChild("Humanoid")
+        if punchingBagHumanoid then
+            for i = 1, 56 do
+                damageRemote:FireServer(punchingBagHumanoid, 15, false)
+            end
+        else
+            warn("PunchingBag Humanoid não encontrado!")
+            break
+        end
+        wait(0.000000000000000000000000000000001) 
+    end
+end
+
+--Main
+local FarmTab1 = Window:MakeTab({
+    Name = "Main",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+local Section = FarmTab1:AddSection({
+    Name = "AutoFarm"
+})
+FarmTab1:AddToggle({
+    Name = "Auto-Strength",
+    Default = false,
+    Callback = function(Value)
+        _G.AutoStrength = Value
+        if Value then
+            AutoStrength()  
+        end
+    end
+})
+
+--Função
+function AutoHealth()
+while _G.AutoHealth == true do
+ local ReplicatedStorage = game:GetService("ReplicatedStorage")
+            local remote = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("Equipment")
+            local args = {
+                "Workout",
+                {
+                    Name = "PushUp",
+                }
+            }
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+
+ local ReplicatedStorage = game:GetService("ReplicatedStorage")
+            local remote = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("Equipment")
+            local args = {
+                "Workout",
+                {
+                    Name = "PushUp",
+                }
+            }
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+
+ local ReplicatedStorage = game:GetService("ReplicatedStorage")
+            local remote = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("Equipment")
+            local args = {
+                "Workout",
+                {
+                    Name = "PushUp",
+                }
+            }
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+
+ local ReplicatedStorage = game:GetService("ReplicatedStorage")
+            local remote = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("Equipment")
+            local args = {
+                "Workout",
+                {
+                    Name = "PushUp",
+                }
+            }
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+
+ local ReplicatedStorage = game:GetService("ReplicatedStorage")
+            local remote = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("Equipment")
+            local args = {
+                "Workout",
+                {
+                    Name = "PushUp",
+                }
+            }
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+
+ local ReplicatedStorage = game:GetService("ReplicatedStorage")
+            local remote = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("Equipment")
+            local args = {
+                "Workout",
+                {
+                    Name = "PushUp",
+                }
+            }
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+
+ local ReplicatedStorage = game:GetService("ReplicatedStorage")
+            local remote = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("Equipment")
+            local args = {
+                "Workout",
+                {
+                    Name = "PushUp",
+                }
+            }
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+
+ local ReplicatedStorage = game:GetService("ReplicatedStorage")
+            local remote = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("Equipment")
+            local args = {
+                "Workout",
+                {
+                    Name = "PushUp",
+                }
+            }
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+ local ReplicatedStorage = game:GetService("ReplicatedStorage")
+            local remote = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("Equipment")
+            local args = {
+                "Workout",
+                {
+                    Name = "PushUp",
+                }
+            }
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+
+ local ReplicatedStorage = game:GetService("ReplicatedStorage")
+            local remote = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("Equipment")
+            local args = {
+                "Workout",
+                {
+                    Name = "PushUp",
+                }
+            }
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+
+ local ReplicatedStorage = game:GetService("ReplicatedStorage")
+            local remote = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("Equipment")
+            local args = {
+                "Workout",
+                {
+                    Name = "PushUp",
+                }
+            }
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+
+ local ReplicatedStorage = game:GetService("ReplicatedStorage")
+            local remote = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("Equipment")
+            local args = {
+                "Workout",
+                {
+                    Name = "PushUp",
+                }
+            }
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+
+ local ReplicatedStorage = game:GetService("ReplicatedStorage")
+            local remote = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("Equipment")
+            local args = {
+                "Workout",
+                {
+                    Name = "PushUp",
+                }
+            }
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+
+ local ReplicatedStorage = game:GetService("ReplicatedStorage")
+            local remote = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("Equipment")
+            local args = {
+                "Workout",
+                {
+                    Name = "PushUp",
+                }
+            }
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+
+ local ReplicatedStorage = game:GetService("ReplicatedStorage")
+            local remote = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("Equipment")
+            local args = {
+                "Workout",
+                {
+                    Name = "PushUp",
+                }
+            }
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+
+ local ReplicatedStorage = game:GetService("ReplicatedStorage")
+            local remote = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("Equipment")
+            local args = {
+                "Workout",
+                {
+                    Name = "PushUp",
+                }
+            }
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+
+ local ReplicatedStorage = game:GetService("ReplicatedStorage")
+            local remote = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("Equipment")
+            local args = {
+                "Workout",
+                {
+                    Name = "PushUp",
+                }
+            }
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+
+ local ReplicatedStorage = game:GetService("ReplicatedStorage")
+            local remote = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("Equipment")
+            local args = {
+                "Workout",
+                {
+                    Name = "PushUp",
+                }
+            }
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+
+ local ReplicatedStorage = game:GetService("ReplicatedStorage")
+            local remote = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("Equipment")
+            local args = {
+                "Workout",
+                {
+                    Name = "PushUp",
+                }
+            }
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+
+ local ReplicatedStorage = game:GetService("ReplicatedStorage")
+            local remote = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("Equipment")
+            local args = {
+                "Workout",
+                {
+                    Name = "PushUp",
+                }
+            }
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+
+ local ReplicatedStorage = game:GetService("ReplicatedStorage")
+            local remote = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("Equipment")
+            local args = {
+                "Workout",
+                {
+                    Name = "PushUp",
+                }
+            }
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+
+ local ReplicatedStorage = game:GetService("ReplicatedStorage")
+            local remote = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("Equipment")
+            local args = {
+                "Workout",
+                {
+                    Name = "PushUp",
+                }
+            }
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+
+ local ReplicatedStorage = game:GetService("ReplicatedStorage")
+            local remote = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("Equipment")
+            local args = {
+                "Workout",
+                {
+                    Name = "PushUp",
+                }
+            }
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+
+ local ReplicatedStorage = game:GetService("ReplicatedStorage")
+            local remote = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("Equipment")
+            local args = {
+                "Workout",
+                {
+                    Name = "PushUp",
+                }
+            }
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+
+ local ReplicatedStorage = game:GetService("ReplicatedStorage")
+            local remote = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("Equipment")
+            local args = {
+                "Workout",
+                {
+                    Name = "PushUp",
+                }
+            }
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+
+ local ReplicatedStorage = game:GetService("ReplicatedStorage")
+            local remote = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("Equipment")
+            local args = {
+                "Workout",
+                {
+                    Name = "PushUp",
+                }
+            }
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+ local ReplicatedStorage = game:GetService("ReplicatedStorage")
+            local remote = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("Equipment")
+            local args = {
+                "Workout",
+                {
+                    Name = "PushUp",
+                }
+            }
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+
+ local ReplicatedStorage = game:GetService("ReplicatedStorage")
+            local remote = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("Equipment")
+            local args = {
+                "Workout",
+                {
+                    Name = "PushUp",
+                }
+            }
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+
+ local ReplicatedStorage = game:GetService("ReplicatedStorage")
+            local remote = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("Equipment")
+            local args = {
+                "Workout",
+                {
+                    Name = "PushUp",
+                }
+            }
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+
+ local ReplicatedStorage = game:GetService("ReplicatedStorage")
+            local remote = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("Equipment")
+            local args = {
+                "Workout",
+                {
+                    Name = "PushUp",
+                }
+            }
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+
+ local ReplicatedStorage = game:GetService("ReplicatedStorage")
+            local remote = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("Equipment")
+            local args = {
+                "Workout",
+                {
+                    Name = "PushUp",
+                }
+            }
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+
+ local ReplicatedStorage = game:GetService("ReplicatedStorage")
+            local remote = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("Equipment")
+            local args = {
+                "Workout",
+                {
+                    Name = "PushUp",
+                }
+            }
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+
+ local ReplicatedStorage = game:GetService("ReplicatedStorage")
+            local remote = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("Equipment")
+            local args = {
+                "Workout",
+                {
+                    Name = "PushUp",
+                }
+            }
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+
+ local ReplicatedStorage = game:GetService("ReplicatedStorage")
+            local remote = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("Equipment")
+            local args = {
+                "Workout",
+                {
+                    Name = "PushUp",
+                }
+            }
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+ local ReplicatedStorage = game:GetService("ReplicatedStorage")
+            local remote = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("Equipment")
+            local args = {
+                "Workout",
+                {
+                    Name = "PushUp",
+                }
+            }
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+
+ local ReplicatedStorage = game:GetService("ReplicatedStorage")
+            local remote = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("Equipment")
+            local args = {
+                "Workout",
+                {
+                    Name = "PushUp",
+                }
+            }
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+
+ local ReplicatedStorage = game:GetService("ReplicatedStorage")
+            local remote = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("Equipment")
+            local args = {
+                "Workout",
+                {
+                    Name = "PushUp",
+                }
+            }
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+
+ local ReplicatedStorage = game:GetService("ReplicatedStorage")
+            local remote = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("Equipment")
+            local args = {
+                "Workout",
+                {
+                    Name = "PushUp",
+                }
+            }
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+
+ local ReplicatedStorage = game:GetService("ReplicatedStorage")
+            local remote = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("Equipment")
+            local args = {
+                "Workout",
+                {
+                    Name = "PushUp",
+                }
+            }
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+
+ local ReplicatedStorage = game:GetService("ReplicatedStorage")
+            local remote = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("Equipment")
+            local args = {
+                "Workout",
+                {
+                    Name = "PushUp",
+                }
+            }
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+
+ local ReplicatedStorage = game:GetService("ReplicatedStorage")
+            local remote = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("Equipment")
+            local args = {
+                "Workout",
+                {
+                    Name = "PushUp",
+                }
+            }
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+
+ local ReplicatedStorage = game:GetService("ReplicatedStorage")
+            local remote = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("Equipment")
+            local args = {
+                "Workout",
+                {
+                    Name = "PushUp",
+                }
+            }
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+
+ local ReplicatedStorage = game:GetService("ReplicatedStorage")
+            local remote = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("Equipment")
+            local args = {
+                "Workout",
+                {
+                    Name = "PushUp",
+                }
+            }
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+
+ local ReplicatedStorage = game:GetService("ReplicatedStorage")
+            local remote = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("Equipment")
+            local args = {
+                "Workout",
+                {
+                    Name = "PushUp",
+                }
+            }
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+
+ local ReplicatedStorage = game:GetService("ReplicatedStorage")
+            local remote = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("Equipment")
+            local args = {
+                "Workout",
+                {
+                    Name = "PushUp",
+                }
+            }
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+
+ local ReplicatedStorage = game:GetService("ReplicatedStorage")
+            local remote = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("Equipment")
+            local args = {
+                "Workout",
+                {
+                    Name = "PushUp",
+                }
+            }
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+
+ local ReplicatedStorage = game:GetService("ReplicatedStorage")
+            local remote = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("Equipment")
+            local args = {
+                "Workout",
+                {
+                    Name = "PushUp",
+                }
+            }
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+
+ local ReplicatedStorage = game:GetService("ReplicatedStorage")
+            local remote = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("Equipment")
+            local args = {
+                "Workout",
+                {
+                    Name = "PushUp",
+                }
+            }
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+
+ local ReplicatedStorage = game:GetService("ReplicatedStorage")
+            local remote = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("Equipment")
+            local args = {
+                "Workout",
+                {
+                    Name = "PushUp",
+                }
+            }
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+
+ local ReplicatedStorage = game:GetService("ReplicatedStorage")
+            local remote = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("Equipment")
+            local args = {
+                "Workout",
+                {
+                    Name = "PushUp",
+                }
+            }
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+
+ local ReplicatedStorage = game:GetService("ReplicatedStorage")
+            local remote = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("Equipment")
+            local args = {
+                "Workout",
+                {
+                    Name = "PushUp",
+                }
+            }
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+
+ local ReplicatedStorage = game:GetService("ReplicatedStorage")
+            local remote = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("Equipment")
+            local args = {
+                "Workout",
+                {
+                    Name = "PushUp",
+                }
+            }
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+            remote:FireServer(unpack(args))
+wait(0.00000000000000000001)
+end
+end
+--Main
+local AutoTab= Window:MakeTab({
+    Name = "FarmHealth",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+local Section = AutoTab:AddSection({
+    Name = "AutoPushUp"
+})
+AutoTab:AddToggle({
+    Name = "Auto-Health",
+    Default = false,
+    Callback = function(Value)
+        _G.AutoHealth = Value
+        AutoHealth(0.0000000000000000000001)
+    end
+})
+
+--Valor
+_G.AutoStamina = false  
+function AutoStamina()
+    while _G.AutoStamina do
+        local ReplicatedStorage = game:GetService("ReplicatedStorage")
+        local remote = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("Equipment")
+        local args = {
+            "Workout",
+            {
+                Name = "SitUp",
+            }
+        }
+        for i = 1, 52 do
+            remote:FireServer(unpack(args))
+        end
+        wait(0.000000000000000000000000000000001) 
+    end
+end
+--Main
+local FarmTab3 = Window:MakeTab({
+    Name = "Main",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+local Section = FarmTab3:AddSection({
+    Name = "AutoSitUp"
+})
+FarmTab3:AddToggle({
+    Name = "Auto-Stamina",
+    Default = false,
+    Callback = function(Value)
+        _G.AutoStamina = Value
+        if Value then
+            AutoStamina()  
+        end
+    end
+})
+
+OrionLib:Init()
