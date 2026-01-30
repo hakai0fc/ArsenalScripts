@@ -25,7 +25,7 @@ end
 
 --Main
 local FarmTab1 = Window:MakeTab({
-    Name = "Main",
+    Name = "FarmStrength",
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
 })
@@ -707,7 +707,7 @@ function AutoStamina()
 end
 --Main
 local FarmTab3 = Window:MakeTab({
-    Name = "Main",
+    Name = "FarmStamina",
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
 })
