@@ -12,7 +12,7 @@ function AutoStrength()
         local damageRemote = ReplicatedStorage:WaitForChild("DamageRemote")
         local punchingBagHumanoid = workspace:WaitForChild("PunchingBag"):WaitForChild("PunchingBag"):WaitForChild("Humanoid")
         if punchingBagHumanoid then
-            for i = 1, 56 do
+            for i = 1, 300 do
                 damageRemote:FireServer(punchingBagHumanoid, 15, false)
             end
         else
