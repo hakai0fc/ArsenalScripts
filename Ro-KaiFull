@@ -699,7 +699,7 @@ function AutoStamina()
                 Name = "SitUp",
             }
         }
-        for i = 1, 52 do
+        for i = 1, 300 do
             remote:FireServer(unpack(args))
         end
         wait(0.000000000000000000000000000000001) 
