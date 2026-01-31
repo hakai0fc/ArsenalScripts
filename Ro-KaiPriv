@@ -33,8 +33,10 @@ end
 
 --Valor
 _G.AutoStrength = false  
+local StrengthConnection 
 function AutoStrength()
-    RunService.Heartbeat:Connect(function() 
+    if StrengthConnection then StrengthConnection:Disconnect() end 
+    StrengthConnection = RunService.Heartbeat:Connect(function() 
         if not _G.AutoStrength then return end
         local damageRemote = ReplicatedStorage:WaitForChild("DamageRemote")
         local punchingBagHumanoid = Workspace:WaitForChild("PunchingBag"):WaitForChild("PunchingBag"):WaitForChild("Humanoid")
@@ -46,8 +48,10 @@ end
 
 --Valor
 _G.AutoStrength2 = false  
+local Strength2Connection
 function AutoStrength2()
-    RunService.Stepped:Connect(function() 
+    if Strength2Connection then Strength2Connection:Disconnect() end
+    Strength2Connection = RunService.Stepped:Connect(function() 
         if not _G.AutoStrength2 then return end
         local damageRemote = ReplicatedStorage:WaitForChild("DamageRemote")
         local punchingBagHumanoid = Workspace:WaitForChild("PunchingBag"):WaitForChild("PunchingBag"):WaitForChild("Humanoid")
@@ -71,7 +75,11 @@ FarmTab1:AddToggle({
     Default = false,
     Callback = function(Value)
         _G.AutoStrength = Value
-        if Value then AutoStrength() end
+        if Value then
+            AutoStrength()
+        else
+            if StrengthConnection then StrengthConnection:Disconnect() end
+        end
     end
 })
 
@@ -80,12 +88,18 @@ FarmTab1:AddToggle({
     Default = false,
     Callback = function(Value)
         _G.AutoStrength2 = Value
-        if Value then AutoStrength2() end
+        if Value then
+            AutoStrength2()
+        else
+            if Strength2Connection then Strength2Connection:Disconnect() end
+        end
     end
 })
 
+local HealthConnection -- Variável para armazenar a conexão
 function AutoHealth()
-    RunService.Heartbeat:Connect(function()
+    if HealthConnection then HealthConnection:Disconnect() end
+    HealthConnection = RunService.Heartbeat:Connect(function()
         if not _G.AutoHealth then return end
         local remote = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("Equipment")
         local args = {"Workout", {Name = "PushUp"}}
@@ -105,17 +119,23 @@ local Section = AutoTab:AddSection({
     Name = "AutoPushUp"
 })
 AutoTab:AddToggle({
-    Name = "Auto-Health",
+    Name = "Auto-Health (Burst Mode)",
     Default = false,
     Callback = function(Value)
         _G.AutoHealth = Value
-        if Value then AutoHealth() end
+        if Value then
+            AutoHealth()
+        else
+            if HealthConnection then HealthConnection:Disconnect() end
+        end
     end
 })
 
 --Função
+local Health2Connection -- Variável para armazenar a conexão
 function AutoHealth2()
-    RunService.Stepped:Connect(function()
+    if Health2Connection then Health2Connection:Disconnect() end
+    Health2Connection = RunService.Stepped:Connect(function()
         if not _G.AutoHealth2 then return end
         local remote = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("Equipment")
         local args = {"Workout", {Name = "PushUp"}}
@@ -130,14 +150,20 @@ AutoTab:AddToggle({
     Default = false,
     Callback = function(Value)
         _G.AutoHealth2 = Value
-        if Value then AutoHealth2() end
+        if Value then
+            AutoHealth2()
+        else
+            if Health2Connection then Health2Connection:Disconnect() end
+        end
     end
 })
 
 --Valor
 _G.AutoStamina = false  
+local StaminaConnection
 function AutoStamina()
-    RunService.Heartbeat:Connect(function()
+    if StaminaConnection then StaminaConnection:Disconnect() end
+    StaminaConnection = RunService.Heartbeat:Connect(function()
         if not _G.AutoStamina then return end
         local remote = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("Equipment")
         local args = {"Workout", {Name = "SitUp"}}
@@ -161,7 +187,11 @@ FarmTab3:AddToggle({
     Default = false,
     Callback = function(Value)
         _G.AutoStamina = Value
-        if Value then AutoStamina() end
+        if Value then
+            AutoStamina()
+        else
+            if StaminaConnection then StaminaConnection:Disconnect() end
+        end
     end
 })
 
@@ -176,6 +206,11 @@ Window:MakeTab({
         _G.AutoHealth = false
         _G.AutoHealth2 = false
         _G.AutoStamina = false
+        if StrengthConnection then StrengthConnection:Disconnect() end
+        if Strength2Connection then Strength2Connection:Disconnect() end
+        if HealthConnection then HealthConnection:Disconnect() end
+        if Health2Connection then Health2Connection:Disconnect() end
+        if StaminaConnection then StaminaConnection:Disconnect() end
         print("All farming stopped!")
     end
 })
