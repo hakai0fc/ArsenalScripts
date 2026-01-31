@@ -2,7 +2,7 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/hakaiofc/Base/main/HUBORION')))()
 
 --Main Script
-local Window = OrionLib:MakeWindow({Name = "HaKai OP Edition", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest", IntroEnabled = false})
+local Window = OrionLib:MakeWindow({Name = "HaKai OP", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest", IntroEnabled = false})
 
 --ANTI AFK
 pcall(function()
@@ -19,9 +19,17 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local RunService = game:GetService("RunService")
 local Workspace = workspace
 
-local function BurstFarm(remote, args, damageRemote, humanoid, burstSize, burstDelay, loopCount)
+_G.StopStrength = false
+_G.StopStrength2 = false
+_G.StopHealth = false
+_G.StopHealth2 = false
+_G.StopStamina = false
+
+local function BurstFarm(remote, args, damageRemote, humanoid, burstSize, burstDelay, loopCount, stopFlag)
     for _ = 1, burstSize do
+        if stopFlag then return end 
         for i = 1, loopCount do
+            if stopFlag then return end 
             pcall(function() 
                 if remote then remote:FireServer(unpack(args)) end
                 if damageRemote and humanoid then damageRemote:FireServer(humanoid, 15, false) end
@@ -33,31 +41,31 @@ end
 
 --Valor
 _G.AutoStrength = false  
-local StrengthConnection 
+local StrengthConnection
 function AutoStrength()
-    if StrengthConnection then StrengthConnection:Disconnect() end 
+    if StrengthConnection then StrengthConnection:Disconnect() end
+    _G.StopStrength = false -- Reseta flag
     StrengthConnection = RunService.Heartbeat:Connect(function() 
-        if not _G.AutoStrength then return end
+        if not _G.AutoStrength or _G.StopStrength then return end
         local damageRemote = ReplicatedStorage:WaitForChild("DamageRemote")
         local punchingBagHumanoid = Workspace:WaitForChild("PunchingBag"):WaitForChild("PunchingBag"):WaitForChild("Humanoid")
-        task.spawn(function() BurstFarm(nil, nil, damageRemote, punchingBagHumanoid, 1, 0.00000000000000000000000001, 70) end)
-        task.spawn(function() BurstFarm(nil, nil, damageRemote, punchingBagHumanoid, 1, 0.00000000000000000000000001, 70) end)
-        task.spawn(function() BurstFarm(nil, nil, damageRemote, punchingBagHumanoid, 1, 0.00000000000000000000000001, 70) end)
+        task.spawn(function() BurstFarm(nil, nil, damageRemote, punchingBagHumanoid, 1, 0.00000000000000000000000001, 35, _G.StopStrength) end)
+        task.spawn(function() BurstFarm(nil, nil, damageRemote, punchingBagHumanoid, 1, 0.00000000000000000000000001, 35, _G.StopStrength) end)
     end)
 end
 
 --Valor
 _G.AutoStrength2 = false  
-local Strength2Connection
+local Strength2Connection 
 function AutoStrength2()
-    if Strength2Connection then Strength2Connection:Disconnect() end
+    if Strength2Connection then Strength2Connection:Disconnect() end 
+    _G.StopStrength2 = false -- Reseta flag
     Strength2Connection = RunService.Stepped:Connect(function() 
-        if not _G.AutoStrength2 then return end
+        if not _G.AutoStrength2 or _G.StopStrength2 then return end
         local damageRemote = ReplicatedStorage:WaitForChild("DamageRemote")
         local punchingBagHumanoid = Workspace:WaitForChild("PunchingBag"):WaitForChild("PunchingBag"):WaitForChild("Humanoid")
-        task.spawn(function() for i = 1, 70 do pcall(function() damageRemote:FireServer(punchingBagHumanoid, 15, false) end) end end) 
-        task.spawn(function() for i = 1, 70 do pcall(function() damageRemote:FireServer(punchingBagHumanoid, 15, false) end) end end)
-        task.spawn(function() for i = 1, 70 do pcall(function() damageRemote:FireServer(punchingBagHumanoid, 15, false) end) end end)
+        task.spawn(function() for i = 1, 35 do if _G.StopStrength2 then return end pcall(function() damageRemote:FireServer(punchingBagHumanoid, 15, false) end) end end)
+        task.spawn(function() for i = 1, 35 do if _G.StopStrength2 then return end pcall(function() damageRemote:FireServer(punchingBagHumanoid, 15, false) end) end end)
     end)
 end
 
@@ -78,6 +86,7 @@ FarmTab1:AddToggle({
         if Value then
             AutoStrength()
         else
+            _G.StopStrength = true 
             if StrengthConnection then StrengthConnection:Disconnect() end
         end
     end
@@ -91,6 +100,7 @@ FarmTab1:AddToggle({
         if Value then
             AutoStrength2()
         else
+            _G.StopStrength2 = true 
             if Strength2Connection then Strength2Connection:Disconnect() end
         end
     end
@@ -98,14 +108,14 @@ FarmTab1:AddToggle({
 
 local HealthConnection -- Variável para armazenar a conexão
 function AutoHealth()
-    if HealthConnection then HealthConnection:Disconnect() end
+    if HealthConnection then HealthConnection:Disconnect() end 
+    _G.StopHealth = false -- Reseta flag
     HealthConnection = RunService.Heartbeat:Connect(function()
-        if not _G.AutoHealth then return end
+        if not _G.AutoHealth or _G.StopHealth then return end
         local remote = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("Equipment")
         local args = {"Workout", {Name = "PushUp"}}
-        task.spawn(function() BurstFarm(remote, args, nil, nil, 1, 0.00000000000000000000000001, 70) end)
-        task.spawn(function() BurstFarm(remote, args, nil, nil, 1, 0.00000000000000000000000001, 70) end)
-        task.spawn(function() BurstFarm(remote, args, nil, nil, 1, 0.00000000000000000000000001, 70) end)
+        task.spawn(function() BurstFarm(remote, args, nil, nil, 1, 0.00000000000000000000000001, 35, _G.StopHealth) end) 
+        task.spawn(function() BurstFarm(remote, args, nil, nil, 1, 0.00000000000000000000000001, 35, _G.StopHealth) end)
     end)
 end
 
@@ -126,22 +136,23 @@ AutoTab:AddToggle({
         if Value then
             AutoHealth()
         else
+            _G.StopHealth = true 
             if HealthConnection then HealthConnection:Disconnect() end
         end
     end
 })
 
 --Função
-local Health2Connection -- Variável para armazenar a conexão
+local Health2Connection 
 function AutoHealth2()
-    if Health2Connection then Health2Connection:Disconnect() end
+    if Health2Connection then Health2Connection:Disconnect() end 
+    _G.StopHealth2 = false 
     Health2Connection = RunService.Stepped:Connect(function()
-        if not _G.AutoHealth2 then return end
+        if not _G.AutoHealth2 or _G.StopHealth2 then return end
         local remote = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("Equipment")
         local args = {"Workout", {Name = "PushUp"}}
-        task.spawn(function() for i = 1, 70 do pcall(function() remote:FireServer(unpack(args)) end) end end) 
-        task.spawn(function() for i = 1, 70 do pcall(function() remote:FireServer(unpack(args)) end) end end)
-        task.spawn(function() for i = 1, 70 do pcall(function() remote:FireServer(unpack(args)) end) end end)
+        task.spawn(function() for i = 1, 35 do if _G.StopHealth2 then return end pcall(function() remote:FireServer(unpack(args)) end) end end)
+        task.spawn(function() for i = 1, 35 do if _G.StopHealth2 then return end pcall(function() remote:FireServer(unpack(args)) end) end end)
     end)
 end
 
@@ -153,6 +164,7 @@ AutoTab:AddToggle({
         if Value then
             AutoHealth2()
         else
+            _G.StopHealth2 = true 
             if Health2Connection then Health2Connection:Disconnect() end
         end
     end
@@ -160,16 +172,16 @@ AutoTab:AddToggle({
 
 --Valor
 _G.AutoStamina = false  
-local StaminaConnection
+local StaminaConnection 
 function AutoStamina()
     if StaminaConnection then StaminaConnection:Disconnect() end
+    _G.StopStamina = false -- Reseta flag
     StaminaConnection = RunService.Heartbeat:Connect(function()
-        if not _G.AutoStamina then return end
+        if not _G.AutoStamina or _G.StopStamina then return end
         local remote = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("Equipment")
         local args = {"Workout", {Name = "SitUp"}}
-        task.spawn(function() BurstFarm(remote, args, nil, nil, 1, 0.00000000000000000000000001, 70) end)
-        task.spawn(function() BurstFarm(remote, args, nil, nil, 1, 0.00000000000000000000000001, 70) end)
-        task.spawn(function() BurstFarm(remote, args, nil, nil, 1, 0.00000000000000000000000001, 70) end)
+        task.spawn(function() BurstFarm(remote, args, nil, nil, 1, 0.00000000000000000000000001, 35, _G.StopStamina) end)
+        task.spawn(function() BurstFarm(remote, args, nil, nil, 1, 0.00000000000000000000000001, 35, _G.StopStamina) end)
     end)
 end
 
@@ -190,6 +202,7 @@ FarmTab3:AddToggle({
         if Value then
             AutoStamina()
         else
+            _G.StopStamina = true
             if StaminaConnection then StaminaConnection:Disconnect() end
         end
     end
@@ -206,6 +219,11 @@ Window:MakeTab({
         _G.AutoHealth = false
         _G.AutoHealth2 = false
         _G.AutoStamina = false
+        _G.StopStrength = true
+        _G.StopStrength2 = true
+        _G.StopHealth = true
+        _G.StopHealth2 = true
+        _G.StopStamina = true
         if StrengthConnection then StrengthConnection:Disconnect() end
         if Strength2Connection then Strength2Connection:Disconnect() end
         if HealthConnection then HealthConnection:Disconnect() end
