@@ -36,9 +36,9 @@ function AutoStrength()
         if not _G.AutoStrength then return end
         local damageRemote = ReplicatedStorage:WaitForChild("DamageRemote")
         local punchingBagHumanoid = Workspace:WaitForChild("PunchingBag"):WaitForChild("PunchingBag"):WaitForChild("Humanoid")
-        task.spawn(function() BurstFarm(nil, nil, damageRemote, punchingBagHumanoid, 100, 0.05) end) 
-        task.spawn(function() BurstFarm(nil, nil, damageRemote, punchingBagHumanoid, 100, 0.05) end)
-        task.spawn(function() BurstFarm(nil, nil, damageRemote, punchingBagHumanoid, 100, 0.05) end)
+        task.spawn(function() BurstFarm(nil, nil, damageRemote, punchingBagHumanoid, 1, 0.00000000000000000000000001) end)
+        task.spawn(function() BurstFarm(nil, nil, damageRemote, punchingBagHumanoid, 1, 0.00000000000000000000000001) end)
+        task.spawn(function() BurstFarm(nil, nil, damageRemote, punchingBagHumanoid, 1, 0.00000000000000000000000001) end)
     end)
 end
 
@@ -49,11 +49,9 @@ function AutoStrength2()
         if not _G.AutoStrength2 then return end
         local damageRemote = ReplicatedStorage:WaitForChild("DamageRemote")
         local punchingBagHumanoid = Workspace:WaitForChild("PunchingBag"):WaitForChild("PunchingBag"):WaitForChild("Humanoid")
-        task.spawn(function() for i = 1, 200 do pcall(function() damageRemote:FireServer(punchingBagHumanoid, 15, false) end) end end)
-        task.spawn(function() for i = 1, 200 do pcall(function() damageRemote:FireServer(punchingBagHumanoid, 15, false) end) end end)
-        task.spawn(function() for i = 1, 200 do pcall(function() damageRemote:FireServer(punchingBagHumanoid, 15, false) end) end end)
-        task.spawn(function() for i = 1, 200 do pcall(function() damageRemote:FireServer(punchingBagHumanoid, 15, false) end) end end)
-        task.spawn(function() for i = 1, 200 do pcall(function() damageRemote:FireServer(punchingBagHumanoid, 15, false) end) end end)
+        task.spawn(function() for i = 1, 70 do pcall(function() damageRemote:FireServer(punchingBagHumanoid, 15, false) end) end end) 
+        task.spawn(function() for i = 1, 70 do pcall(function() damageRemote:FireServer(punchingBagHumanoid, 15, false) end) end end)
+        task.spawn(function() for i = 1, 70 do pcall(function() damageRemote:FireServer(punchingBagHumanoid, 15, false) end) end end)
     end)
 end
 
@@ -67,7 +65,7 @@ local Section = FarmTab1:AddSection({
     Name = "AutoFarm"
 })
 FarmTab1:AddToggle({
-    Name = "Auto-Strength (Burst Mode)",
+    Name = "Auto-Strength",
     Default = false,
     Callback = function(Value)
         _G.AutoStrength = Value
@@ -89,9 +87,9 @@ function AutoHealth()
         if not _G.AutoHealth then return end
         local remote = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("Equipment")
         local args = {"Workout", {Name = "PushUp"}}
-        task.spawn(function() BurstFarm(remote, args, nil, nil, 150, 0.03) end)
-        task.spawn(function() BurstFarm(remote, args, nil, nil, 150, 0.03) end)
-        task.spawn(function() BurstFarm(remote, args, nil, nil, 150, 0.03) end)
+        task.spawn(function() BurstFarm(remote, args, nil, nil, 1, 0.00000000000000000000000001) end)
+        task.spawn(function() BurstFarm(remote, args, nil, nil, 1, 0.00000000000000000000000001) end)
+        task.spawn(function() BurstFarm(remote, args, nil, nil, 1, 0.00000000000000000000000001) end)
     end)
 end
 
@@ -119,11 +117,9 @@ function AutoHealth2()
         if not _G.AutoHealth2 then return end
         local remote = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("Equipment")
         local args = {"Workout", {Name = "PushUp"}}
-        task.spawn(function() for i = 1, 300 do pcall(function() remote:FireServer(unpack(args)) end) end end)
-        task.spawn(function() for i = 1, 300 do pcall(function() remote:FireServer(unpack(args)) end) end end)
-        task.spawn(function() for i = 1, 300 do pcall(function() remote:FireServer(unpack(args)) end) end end)
-        task.spawn(function() for i = 1, 300 do pcall(function() remote:FireServer(unpack(args)) end) end end)
-        task.spawn(function() for i = 1, 300 do pcall(function() remote:FireServer(unpack(args)) end) end end)
+        task.spawn(function() for i = 1, 70 do pcall(function() remote:FireServer(unpack(args)) end) end end) 
+        task.spawn(function() for i = 1, 70 do pcall(function() remote:FireServer(unpack(args)) end) end end)
+        task.spawn(function() for i = 1, 70 do pcall(function() remote:FireServer(unpack(args)) end) end end)
     end)
 end
 
@@ -143,9 +139,9 @@ function AutoStamina()
         if not _G.AutoStamina then return end
         local remote = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("Equipment")
         local args = {"Workout", {Name = "SitUp"}}
-        task.spawn(function() BurstFarm(remote, args, nil, nil, 150, 0.03) end)
-        task.spawn(function() BurstFarm(remote, args, nil, nil, 150, 0.03) end)
-        task.spawn(function() BurstFarm(remote, args, nil, nil, 150, 0.03) end)
+        task.spawn(function() BurstFarm(remote, args, nil, nil, 1, 0.00000000000000000000000001) end)
+        task.spawn(function() BurstFarm(remote, args, nil, nil, 1, 0.00000000000000000000000001) end)
+        task.spawn(function() BurstFarm(remote, args, nil, nil, 1, 0.00000000000000000000000001) end)
     end)
 end
 
@@ -159,7 +155,7 @@ local Section = FarmTab3:AddSection({
     Name = "AutoSitUp"
 })
 FarmTab3:AddToggle({
-    Name = "Auto-Stamina (Burst Mode)",
+    Name = "Auto-Stamina",
     Default = false,
     Callback = function(Value)
         _G.AutoStamina = Value
