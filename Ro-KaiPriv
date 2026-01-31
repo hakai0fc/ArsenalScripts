@@ -19,7 +19,6 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local RunService = game:GetService("RunService")
 local Workspace = workspace
 
--- Função Auxiliar: Burst Farming (Explosões rápidas de chamadas)
 local function BurstFarm(remote, args, damageRemote, humanoid, burstSize, burstDelay)
     for _ = 1, burstSize do
         pcall(function() 
@@ -40,14 +39,13 @@ function AutoStrength()
         task.spawn(function() BurstFarm(nil, nil, damageRemote, punchingBagHumanoid, 100, 0.05) end) 
         task.spawn(function() BurstFarm(nil, nil, damageRemote, punchingBagHumanoid, 100, 0.05) end)
         task.spawn(function() BurstFarm(nil, nil, damageRemote, punchingBagHumanoid, 100, 0.05) end)
-        print("Strength Farmed: Burst executado")  -- Log para monitoramento
     end)
 end
 
 --Valor
 _G.AutoStrength2 = false  
 function AutoStrength2()
-    RunService.Stepped:Connect(function()  -- Outra variante de RunService
+    RunService.Stepped:Connect(function() 
         if not _G.AutoStrength2 then return end
         local damageRemote = ReplicatedStorage:WaitForChild("DamageRemote")
         local punchingBagHumanoid = Workspace:WaitForChild("PunchingBag"):WaitForChild("PunchingBag"):WaitForChild("Humanoid")
@@ -56,7 +54,6 @@ function AutoStrength2()
         task.spawn(function() for i = 1, 200 do pcall(function() damageRemote:FireServer(punchingBagHumanoid, 15, false) end) end end)
         task.spawn(function() for i = 1, 200 do pcall(function() damageRemote:FireServer(punchingBagHumanoid, 15, false) end) end end)
         task.spawn(function() for i = 1, 200 do pcall(function() damageRemote:FireServer(punchingBagHumanoid, 15, false) end) end end)
-        print("Strength2 Farmed: Turbo ativado")
     end)
 end
 
@@ -79,7 +76,7 @@ FarmTab1:AddToggle({
 })
 
 FarmTab1:AddToggle({
-    Name = "Auto-Strength2 (Turbo Mode)",
+    Name = "Auto-Strength2",
     Default = false,
     Callback = function(Value)
         _G.AutoStrength2 = Value
@@ -87,7 +84,6 @@ FarmTab1:AddToggle({
     end
 })
 
---Função (Otimizada com RunService e Detecção)
 function AutoHealth()
     RunService.Heartbeat:Connect(function()
         if not _G.AutoHealth then return end
@@ -96,7 +92,6 @@ function AutoHealth()
         task.spawn(function() BurstFarm(remote, args, nil, nil, 150, 0.03) end)
         task.spawn(function() BurstFarm(remote, args, nil, nil, 150, 0.03) end)
         task.spawn(function() BurstFarm(remote, args, nil, nil, 150, 0.03) end)
-        print("Health Farmed: Burst executado")
     end)
 end
 
@@ -129,12 +124,11 @@ function AutoHealth2()
         task.spawn(function() for i = 1, 300 do pcall(function() remote:FireServer(unpack(args)) end) end end)
         task.spawn(function() for i = 1, 300 do pcall(function() remote:FireServer(unpack(args)) end) end end)
         task.spawn(function() for i = 1, 300 do pcall(function() remote:FireServer(unpack(args)) end) end end)
-        print("Health2 Farmed: Turbo ativado")
     end)
 end
 
 AutoTab:AddToggle({
-    Name = "Auto-Health2 (Turbo Mode)",
+    Name = "Auto-Health2",
     Default = false,
     Callback = function(Value)
         _G.AutoHealth2 = Value
@@ -152,7 +146,6 @@ function AutoStamina()
         task.spawn(function() BurstFarm(remote, args, nil, nil, 150, 0.03) end)
         task.spawn(function() BurstFarm(remote, args, nil, nil, 150, 0.03) end)
         task.spawn(function() BurstFarm(remote, args, nil, nil, 150, 0.03) end)
-        print("Stamina Farmed: Burst executado")
     end)
 end
 
