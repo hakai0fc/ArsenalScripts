@@ -2,7 +2,7 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/hakaiofc/Base/main/HUBORION')))()
 
 --Main Script
-local Window = OrionLib:MakeWindow({Name = "HaKai Farm", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest", IntroEnabled = false})
+local Window = OrionLib:MakeWindow({Name = "HaKai OP", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest", IntroEnabled = false})
 
 --ANTI AFK
 pcall(function()
@@ -49,9 +49,9 @@ function AutoStrength()
         if not _G.AutoStrength or _G.StopStrength then return end
         local damageRemote = ReplicatedStorage:WaitForChild("DamageRemote")
         local punchingBagHumanoid = Workspace:WaitForChild("PunchingBag"):WaitForChild("PunchingBag"):WaitForChild("Humanoid")
-        task.spawn(function() BurstFarm(nil, nil, damageRemote, punchingBagHumanoid, 1, 0.00000000000000000000000001, 65, _G.StopStrength) end)
-        task.spawn(function() BurstFarm(nil, nil, damageRemote, punchingBagHumanoid, 1, 0.00000000000000000000000001, 65, _G.StopStrength) end)
-        task.spawn(function() BurstFarm(nil, nil, damageRemote, punchingBagHumanoid, 1, 0.00000000000000000000000001, 65, _G.StopStrength) end)
+        task.spawn(function() BurstFarm(nil, nil, damageRemote, punchingBagHumanoid, 1, 0.00000000000000000000000001, 60, _G.StopStrength) end)
+        task.spawn(function() BurstFarm(nil, nil, damageRemote, punchingBagHumanoid, 1, 0.00000000000000000000000001, 60, _G.StopStrength) end)
+        task.spawn(function() BurstFarm(nil, nil, damageRemote, punchingBagHumanoid, 1, 0.00000000000000000000000001, 60, _G.StopStrength) end)
     end)
 end
 
@@ -65,9 +65,9 @@ function AutoStrength2()
         if not _G.AutoStrength2 or _G.StopStrength2 then return end
         local damageRemote = ReplicatedStorage:WaitForChild("DamageRemote")
         local punchingBagHumanoid = Workspace:WaitForChild("PunchingBag"):WaitForChild("PunchingBag"):WaitForChild("Humanoid")
-        task.spawn(function() for i = 1, 65 do if _G.StopStrength2 then return end pcall(function() damageRemote:FireServer(punchingBagHumanoid, 15, false) end) end end)
-        task.spawn(function() for i = 1, 65 do if _G.StopStrength2 then return end pcall(function() damageRemote:FireServer(punchingBagHumanoid, 15, false) end) end end)
-        task.spawn(function() for i = 1, 65 do if _G.StopStrength2 then return end pcall(function() damageRemote:FireServer(punchingBagHumanoid, 15, false) end) end end)
+        task.spawn(function() for i = 1, 60 do if _G.StopStrength2 then return end pcall(function() damageRemote:FireServer(punchingBagHumanoid, 15, false) end) end end)
+        task.spawn(function() for i = 1, 60 do if _G.StopStrength2 then return end pcall(function() damageRemote:FireServer(punchingBagHumanoid, 15, false) end) end end)
+        task.spawn(function() for i = 1, 60 do if _G.StopStrength2 then return end pcall(function() damageRemote:FireServer(punchingBagHumanoid, 15, false) end) end end)
     end)
 end
 
@@ -116,9 +116,11 @@ function AutoHealth()
         if not _G.AutoHealth or _G.StopHealth then return end
         local remote = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("Equipment")
         local args = {"Workout", {Name = "PushUp"}}
-        task.spawn(function() BurstFarm(remote, args, nil, nil, 1, 0.00000000000000000000000001, 65, _G.StopHealth) end) 
-        task.spawn(function() BurstFarm(remote, args, nil, nil, 1, 0.00000000000000000000000001, 65, _G.StopHealth) end) 
-        task.spawn(function() BurstFarm(remote, args, nil, nil, 1, 0.00000000000000000000000001, 65, _G.StopHealth) end)
+        task.spawn(function() BurstFarm(remote, args, nil, nil, 1, 0.00000000000000000000000001, 60, _G.StopHealth) end) 
+        task.spawn(function() BurstFarm(remote, args, nil, nil, 1, 0.00000000000000000000000001, 60, _G.StopHealth) end) 
+        task.spawn(function() BurstFarm(remote, args, nil, nil, 1, 0.00000000000000000000000001, 60, _G.StopHealth) end)
+        task.spawn(function() BurstFarm(remote, args, nil, nil, 1, 0.00000000000000000000000001, 60, _G.StopHealth) end)
+        task.spawn(function() BurstFarm(remote, args, nil, nil, 1, 0.00000000000000000000000001, 60, _G.StopHealth) end)
     end)
 end
 
@@ -154,9 +156,9 @@ function AutoHealth2()
         if not _G.AutoHealth2 or _G.StopHealth2 then return end
         local remote = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("Equipment")
         local args = {"Workout", {Name = "PushUp"}}
-        task.spawn(function() for i = 1, 65 do if _G.StopHealth2 then return end pcall(function() remote:FireServer(unpack(args)) end) end end)
-        task.spawn(function() for i = 1, 65 do if _G.StopHealth2 then return end pcall(function() remote:FireServer(unpack(args)) end) end end)
-        task.spawn(function() for i = 1, 65 do if _G.StopHealth2 then return end pcall(function() remote:FireServer(unpack(args)) end) end end)
+        task.spawn(function() for i = 1, 60 do if _G.StopHealth2 then return end pcall(function() remote:FireServer(unpack(args)) end) end end)
+        task.spawn(function() for i = 1, 60 do if _G.StopHealth2 then return end pcall(function() remote:FireServer(unpack(args)) end) end end)
+        task.spawn(function() for i = 1, 60 do if _G.StopHealth2 then return end pcall(function() remote:FireServer(unpack(args)) end) end end)
     end)
 end
 
@@ -184,9 +186,9 @@ function AutoStamina()
         if not _G.AutoStamina or _G.StopStamina then return end
         local remote = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("Equipment")
         local args = {"Workout", {Name = "SitUp"}}
-        task.spawn(function() BurstFarm(remote, args, nil, nil, 1, 0.00000000000000000000000001, 65, _G.StopStamina) end)
-        task.spawn(function() BurstFarm(remote, args, nil, nil, 1, 0.00000000000000000000000001, 65, _G.StopStamina) end)
-        task.spawn(function() BurstFarm(remote, args, nil, nil, 1, 0.00000000000000000000000001, 65, _G.StopStamina) end)
+        task.spawn(function() BurstFarm(remote, args, nil, nil, 1, 0.00000000000000000000000001, 60, _G.StopStamina) end)
+        task.spawn(function() BurstFarm(remote, args, nil, nil, 1, 0.00000000000000000000000001, 60, _G.StopStamina) end)
+        task.spawn(function() BurstFarm(remote, args, nil, nil, 1, 0.00000000000000000000000001, 60, _G.StopStamina) end)
     end)
 end
 
