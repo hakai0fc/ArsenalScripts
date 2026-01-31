@@ -25,8 +25,28 @@ function AutoStrength()
         local damageRemote = ReplicatedStorage:WaitForChild("DamageRemote")
         local punchingBagHumanoid = workspace:WaitForChild("PunchingBag"):WaitForChild("PunchingBag"):WaitForChild("Humanoid")
         if punchingBagHumanoid then
-            for i = 1, 300 do
+            for i = 1, 70 do
                 damageRemote:FireServer(punchingBagHumanoid, 15, false)
+            end
+        else
+            warn("PunchingBag Humanoid não encontrado!")
+            break
+        end
+        wait(0.000000000000000000000000000000001) 
+    end
+end
+--Valor
+_G.AutoStrength2 = false  
+function AutoStrength2()
+    while _G.AutoStrength2 do
+        local ReplicatedStorage = game:GetService("ReplicatedStorage")
+        local damageRemote = ReplicatedStorage:WaitForChild("DamageRemote")
+        local punchingBagHumanoid = workspace:WaitForChild("PunchingBag"):WaitForChild("PunchingBag"):WaitForChild("Humanoid")
+        if punchingBagHumanoid then
+            for i = 1, 70 do
+                damageRemote:FireServer(punchingBagHumanoid, 15, false)  
+                damageRemote:FireServer(punchingBagHumanoid, 15, false) 
+                damageRemote:FireServer(punchingBagHumanoid, 15, false)  
             end
         else
             warn("PunchingBag Humanoid não encontrado!")
@@ -56,6 +76,16 @@ FarmTab1:AddToggle({
     end
 })
 
+FarmTab1:AddToggle({
+    Name = "Auto-Strength2",
+    Default = false,
+    Callback = function(Value)
+        _G.AutoStrength2 = Value
+        if Value then
+            AutoStrength2()  
+        end
+    end
+})
 --Função
 function AutoHealth()
 while _G.AutoHealth == true do
@@ -699,6 +729,34 @@ AutoTab:AddToggle({
         AutoHealth(0.0000000000000000000001)
     end
 })
+--Função
+function AutoHealth2()
+    while _G.AutoHealth2 == true do
+        local ReplicatedStorage = game:GetService("ReplicatedStorage")
+        local remote = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("Equipment")
+        local args = {
+            "Workout",
+            {
+                Name = "PushUp",
+            }
+        }
+
+        for i = 1, 150 do
+            remote:FireServer(unpack(args)) 
+            remote:FireServer(unpack(args))  
+            remote:FireServer(unpack(args))  
+        end
+        wait(0.00000000000000000001)
+    end
+end
+AutoTab:AddToggle({
+    Name = "Auto-Health2",
+    Default = false,
+    Callback = function(Value)
+        _G.AutoHealth2 = Value
+        AutoHealth2(0.0000000000000000000001)
+    end
+})
 
 --Valor
 _G.AutoStamina = false  
@@ -712,8 +770,10 @@ function AutoStamina()
                 Name = "SitUp",
             }
         }
-        for i = 1, 300 do
+        for i = 1, 70 do
             remote:FireServer(unpack(args))
+                        remote:FireServer(unpack(args))
+                                    remote:FireServer(unpack(args))
         end
         wait(0.000000000000000000000000000000001) 
     end
